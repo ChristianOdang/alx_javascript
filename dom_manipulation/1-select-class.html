@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selecting Elements</title>
+    <style>
+      .highlight {
+        font-weight: bold;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        // select the element with the class "highlight"
+        var highlightedElement = document.querySelectorAll(".highlight");
+
+        // Modify the format
+        highlightedElement.forEach(function (el) {
+          el.style.fontWeight = "bold";
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <p class="highlight">This is a highlighted paragraph</p>
+    <p>This is a normal paragraph</p>
+  </body>
 </html>

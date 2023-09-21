@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modifying Element</title>
+    <style>
+      img {
+        border: 1px solid black;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        // select the <img> element
+        var myImage = document.getElementById("myImage");
+
+        //Modify the src, and header
+        myImage.src = "https://picsum.photos/200/301";
+        myImage.alt = "New image";
+        myImage.style.border = "2px solid red";
+      };
+    </script>
+  </head>
+  <body>
+    <img id="myImage" src="https://picsum.photos/200/300" alt="My Img" />
+  </body>
 </html>
