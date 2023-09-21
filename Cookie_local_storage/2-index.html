@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-    
-  h1>Login to the website</h1>
-  <input type="text" id="firstname" placeholder="Firstname" />
-  <input type="email" id="email" placeholder="Email" />
-  <button type="button" onclick="setCookie()">Log me in</button>
-  <h2>Cookies</h2>
-  <button type="button" onclick="showCookie()">Show the cookies</button>  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="htpps://cdn.jsdelivr.net/npm/js-cookies@rc/dist/js.cookie.min.js"></script>
+  </head>
+  <body>
+    <div id="loginForm">
+      <h1>Login to the website</h1>
+      <input type="text" id="firstname" placeholder="Firstname" />
+      <input type="email" id="email" placeholder="Email" />
+      <button type="button" onclick="setCookie()">Log me in</button>
+    </div>
 
-  <script src="src/index.js"></script>
-  
-</body>
+    <script src="src/index.js"></script>
+  </body>
 </html>

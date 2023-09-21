@@ -6,6 +6,49 @@
   <title>Document</title>
 </head>
 <body>
+
+   <script>
+    let availableItems = ["Shampoo", "Soap", "Sponge", "Water"];
+
+    function addItemToCart(item) {
+      sessionStorage.setItem(item, true);
+    }
+
+    function createStore() {
+      const Ul = document.createElement("ul");
+      const b_body = document.getElementsByTagName("body")[0];
+
+      for (let i of availableItems) {
+        let li = document.createElement("li");
+        li.innerHTML = i;
+        li.addEventListener("click", function() {
+          addItemToCart(i)
+        });
+        Ul.append(li);
+      }
+      b_body.append(Ul);
+    }
+
+    function displayCart() {
+      if (sessionStorage.length) {
+        const para = document.createElement("p");
+        const b_body = document.getElementsByTagName("body")[0];
+        para.innerHTML = `You previously had ${sessionStorage.length} items in your carts`;
+        b_body.append(para);
+      }
+    }
+
+    if (typeof Storage !== "undefined") {
+      createStore();
+      displayCart();
+    } else {
+      alert (
+        "Sorry, your browser does not support web storage. Try again with a better one"
+      );
+    }
+
+  </script>
+  
   
 </body>
 </html>
