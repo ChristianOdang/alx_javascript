@@ -66,7 +66,7 @@ function deleteCookiesAndShowForm() {
 function showWelcomeMessageOrForm() {
   if (getCookies("email") && getCookies("firstname")) {
     hideForm();
-
+J
     const b_body = document.querySelector("body");
     const d_div = document.createElement("div");
     d_div.setAttribute("id", "welcome");
