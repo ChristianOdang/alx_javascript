@@ -3,9 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Registration Form</title>
+  <style>
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    input {
+      display: block;
+      margin-bottom: 12px;
+    }
+    input[type="text"], input[type="email"], input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type="submit"] {
+      background-color: #007BFF;
+      border: none;
+      padding: 6px 12px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
+
+  <form action="#" method="post" id="contact_form">
+    <label for="name">Name: </label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="mail">Email: </label>
+    <input type="email" id="mail" name="Email" required />
+
+    <label for="pswd">Password: </label>
+    <input type="password" id="pswd" name="Password" />
+
+    <label for="com_pswd">Confirm Password: </label>
+    <input type="password" id="com_pswd" name="Password" />
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    const form = document.getElementById("contact_form");
+    const eMail = document.getElementById("mail");
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    form.addEventListener("submit", function(event) {
+      const emai = eMail.value;
+
+      if (!emailPattern.test(emai)) {
+        alert("Please enter a valid email address");
+        event.preventDefault();
+      }
+    });
+  </script>
   
 </body>
 </html>

@@ -3,9 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Subscription Form</title>
 </head>
 <body>
+  <form action="#" method="post" id="sub_form" onsubmit="return validateForm()">
+    <label for="name">Name: </label>
+    <input type="text" id="name" name="Name" required /> <br>
+
+    <label for="mail">Email: </label>
+    <input type="email" id="mail" name="Email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"> <br>
+
+    <label>Subscription Preference:</label>
+    <input type="radio" id="monthly" name="Subscription" value="monthly" required>
+    <label for="monthly">Monthly</label><br>
+
+    <input type="radio" id="yearly" name="Subscription" value="yearly" required>
+    <label for="yearly">Yearly</label>
+
+    <input type="submit" value="Subscribe">
+  </form>
   
 </body>
 </html>
