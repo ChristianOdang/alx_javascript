@@ -1,6 +1,6 @@
-document.getElementById("passwordForm").onsubmit = function () {
+document.getElementById("passwordForm").addEventListener("onsubmit", function () {
   return validatePassword;
-}
+});
 
 function validatePassword() {
   const password = document.getElementById("password").value;
