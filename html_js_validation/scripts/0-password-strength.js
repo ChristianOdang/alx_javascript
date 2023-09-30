@@ -1,6 +1,3 @@
-document.getElementById("passwordForm").addEventListener("onsubmit", function () {
-  return validatePassword;
-});
 
 function validatePassword() {
   const password = document.getElementById("password").value;
@@ -31,8 +28,9 @@ function validatePassword() {
   }
 
   if (!specialCharRegex.test(password)) {
-    errorMsg.textContent = "Password must contain at least one special character.";
-    return false
+    errorMsg.textContent =
+      "Password must contain at least one special character.";
+    return false;
   }
 
   // If all the criteria are met, clear the error message
