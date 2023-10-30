@@ -1,27 +1,20 @@
 #!/usr/bin/node
-
-// import request
 const request = require('request');
 
-
-// pass cmd line argument
 const url = process.argv[2];
-const parts = [];
 
-// make a GET request
-request.get(url, {encoding: 'utf-8'})
-.on('data', (data) => {
-    parts.push(data);
-})
-.on('complete', () => {
-    const resp = JSON.parse(parts);
-    let num_films = 0;
-    resp.results.forEach(function (actor) {
-       actor.characters.forEach((act) => {
-        if (act.includes('https://swapi-api.alx-tools.com/api/people/18')){
-            num_films++;
-        }
-       })
-    }) 
-    console.log(num_films);
-})
+request.get(url, (error, response, body) =>{
+    if(!error && response.statusCode == 200){
+        const films = JSON.parse(body);
+        let counter = 0;
+        films.results.forEach((film) =>{
+            film.characters.forEach((actor) => {
+                const split_film = actor.split('/');
+                if(split_film[split_film.length-2] == 18) {
+                    counter += 1;
+                }
+            })
+        })
+        console.log(counter);
+    }
+});
